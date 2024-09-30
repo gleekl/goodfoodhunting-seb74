@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <% if (isLoggedIn) { %>
+    <p>logged in as <%= currentUser.email %></p>
+    <form action="/session?_method=delete" method="post">
+      <button>logout</button>
+    </form>
+  <% } else { %>
+    <a href="/login">login</a>
+  <% }%>
+
+  <nav>
+    <% if (isLoggedIn) { %>
+    <a href="/dishes/new">share a dish</a>
+    <% } %>
+  </nav>
+
+  <h1>goodfoodhunting</h1>
+
+  <%- body %>
+
+  <footer>
+    &copy; 2024
+  </footer>
+</body>
+</html>

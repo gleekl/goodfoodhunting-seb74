@@ -1,0 +1,10 @@
+<h2>dish details</h2>
+
+<h2><%= dish.title %></h2>
+
+<!-- html forms when they are implemented lazy get post -->
+<form action="/dishes/<%= dish.id %>?_method=delete" method="post">
+  <button>delete</button>
+</form>
+
+<a href="/dishes/<%= dish.id %>/edit">edit dish</a>

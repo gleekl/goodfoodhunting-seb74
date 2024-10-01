@@ -11,7 +11,6 @@ let email = 'demo@ga.co'
 let plainTextPass = 'pudding'
 let saltRounds = 10
 
-
 // 1. generate the salt
 // 2. hash the password with the salt
 // 3. insert user into database

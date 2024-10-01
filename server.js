@@ -11,6 +11,7 @@ const setCurrentUser = require('./middlewares/set_current_user')
 const sessionRouter = require('./routes/session_router')
 const dishRouter = require('./routes/dish_router')
 const pageRouter = require('./routes/page_router')
+const userRouter = require("./routes/user_router")
 
 app.set('view engine', 'ejs')
 
@@ -29,6 +30,7 @@ app.use(expressLayouts)
 app.use(sessionRouter)
 app.use(pageRouter)
 app.use(dishRouter)
+app.use("/users", userRouter)
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

@@ -7,18 +7,21 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <% if (isLoggedIn) { %>
-    <p>logged in as <%= currentUser.email %></p>
-    <form action="/session?_method=delete" method="post">
-      <button>logout</button>
-    </form>
-  <% } else { %>
-    <a href="/login">login</a>
-  <% }%>
+
 
   <nav>
+    <a href="/">home</a>
     <% if (isLoggedIn) { %>
-    <a href="/dishes/new">share a dish</a>
+      <p>logged in as <%= currentUser.email %></p>
+      <form action="/session?_method=delete" method="post">
+        <button>logout</button>
+      </form>
+    <% } else { %>
+      <a href="/login">login</a>
+      <a href="/users/signup">signup</a>
+    <% }%>
+    <% if (isLoggedIn) { %>
+      <a href="/dishes/new">share a dish</a>
     <% } %>
   </nav>
 
